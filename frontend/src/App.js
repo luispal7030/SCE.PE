@@ -12,6 +12,12 @@ import Dashboard from "./components/DashBoard";
 import RightSide from "./components/RightSide";
 import LeftSide from "./components/LeftSide";
 import Footer from './components/Footer'
+import Compras from "./components/Compras";
+import Ventas from "./components/Ventas";
+
+
+
+
 
 function App() {
   return (
@@ -27,6 +33,9 @@ function App() {
         <div className="container p-4">
             <Routes>
               <Route path="/" exact element={<Dashboard />} />
+              <Route path="/compras" element={<Compras />} />
+              <Route path="/ventas" element={<Ventas />} />
+
               <Route path="/notes" element={<NoteList/>}/>
               <Route path="/edit/:id" element={<CreateNote />} />
               <Route path="/create" element={<CreateNote />} />

@@ -11,19 +11,15 @@ export default class LeftSide extends Component {
               Dashboard
             </Link>
           </li>
+
           <li className="nav-item">
-            <Link className="nav-link" to="/">
-              Dashboard
+            <Link className="nav-link" to="/compras">
+              Compras
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/">
-              Dashboard
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/">
-              Dashboard
+            <Link className="nav-link" to="/ventas">
+              Ventas
             </Link>
           </li>
           <li className="nav-item">
