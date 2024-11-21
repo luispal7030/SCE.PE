@@ -1,21 +1,24 @@
 import React from "react";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
+import "./content/leftside.css"
 
 import Navigation from "./components/Navigation";
-import NoteList from "./components/NoteList";
-import CreateUser from "./components/CreateUser";
-import CreateNote from "./components/CreateNote";
+// import NoteList from "./components/NoteList";
+// import CreateUser from "./components/CreateUser";
+// import CreateNote from "./components/CreateNote";
 import Dashboard from "./components/DashBoard";
-import RightSide from "./components/RightSide";
+// import RightSide from "./components/RightSide";
 import LeftSide from "./components/LeftSide";
-import Footer from './components/Footer'
-import Compras from "./components/Compras";
-import Ventas from "./components/Ventas";
-
-
+// import Footer from './components/Footer'
+// import Compras from "./components/Compras";
+// import Ventas from "./components/Ventas";
+// import XmlFileDrop from "./components/Xmlfiledrop";
+// import Documents from "./components/Documents"
+import Cotizador from "./components/cotizador";
 
 
 
@@ -33,22 +36,17 @@ function App() {
         <div className="container p-4">
             <Routes>
               <Route path="/" exact element={<Dashboard />} />
-              <Route path="/compras" element={<Compras />} />
-              <Route path="/ventas" element={<Ventas />} />
-
-              <Route path="/notes" element={<NoteList/>}/>
-              <Route path="/edit/:id" element={<CreateNote />} />
-              <Route path="/create" element={<CreateNote />} />
-              <Route path="/user" element={<CreateUser />} />
+              <Route path="/cotizador" element={<Cotizador/>} />
             </Routes>
           </div>
         </div>
-        <div class="rightSide">
+        {/* <div class="rightSide">
           <RightSide/>
-        </div>
-        <div class="footer">
+        </div> */}
+        {/* <div class="footer">
           <Footer/>
-        </div>
+        </div> */}
+
       </section>
     </Router>
   );

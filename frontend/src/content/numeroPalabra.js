@@ -72,40 +72,17 @@ function numeroEnPalabras(numero) {
         return palabras.trim();
     }
 
-    return convertirMillones(numero);
-}
-
-// Ejemplo de uso:
-console.log(numeroEnPalabras(1320));  // "un millón doscientos treinta y cuatro mil quinientos sesenta y siete"
-console.log(numeroEnPalabras(100));   // "novecientos ochenta y siete mil seiscientos cincuenta y cuatro"
-console.log(numeroEnPalabras(20));     // "dos mil veinte"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function numeroEnMoneda(numero, moneda = "dólares") {
+    // Separar la parte entera y decimal
     const parteEntera = Math.floor(numero);
-    const parteDecimal = Math.round((numero - parteEntera) * 100);
+    const parteDecimal = Math.round((numero - parteEntera) * 100); // Obtener los centavos (hasta 2 decimales)
 
-    let resultado = numeroEnPalabras(parteEntera) + " " + moneda;
+    let palabras = convertirMillones(parteEntera);  // Convertir la parte entera a palabras
 
     if (parteDecimal > 0) {
-        resultado += " con " + numeroEnPalabras(parteDecimal) + " centavos";
+        palabras += " con " + convertirCentenas(parteDecimal) + " centavos";
     }
 
-    return resultado;
+    return palabras.trim();
 }
 
-// Ejemplo de uso:
-console.log(numeroEnMoneda(1234.56));  // "mil doscientos treinta y cuatro dólares con cincuenta y seis centavos"
-console.log(numeroEnMoneda(987.10, "soles"));  // "novecientos ochenta y siete soles con diez centavos"
+module.exports = { numeroEnPalabras, numeroEnMoneda };
